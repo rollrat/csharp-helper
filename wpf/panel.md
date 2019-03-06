@@ -2,6 +2,8 @@
 
 ## Drop Panel
 
+![](images/droppanel.gif)
+
 ``` cs
 public class DropPanel : Panel
 {
