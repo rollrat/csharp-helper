@@ -13,7 +13,7 @@ public class DropPanel : Panel
         PositionProperty = DependencyProperty.RegisterAttached(
             "Position",
             typeof(Rect),
-            typeof(FallsPanel),
+            typeof(DropPanel),
             new FrameworkPropertyMetadata(
                 new Rect(double.NaN, double.NaN, double.NaN, double.NaN),
                 FrameworkPropertyMetadataOptions.AffectsParentArrange));
@@ -21,7 +21,7 @@ public class DropPanel : Panel
         DesiredPositionProperty = DependencyProperty.RegisterAttached(
             "DesiredPosition",
             typeof(Rect),
-            typeof(FallsPanel),
+            typeof(DropPanel),
             new FrameworkPropertyMetadata(
                 new Rect(double.NaN, double.NaN, double.NaN, double.NaN),
                 OnDesiredPositionChanged));
@@ -134,7 +134,7 @@ public class DropPanel : Panel
             if (i >= width_length)
             {
                 x = positions[i - width_length].X;
-                y = positions[i - width_length].Y + InternalChildren[i - width_length].DesiredSize.Heigh
+                y = positions[i - width_length].Y + InternalChildren[i - width_length].DesiredSize.Height;
             }
 
             desired_height = Math.Max(desired_height, child.DesiredSize.Height + y);
